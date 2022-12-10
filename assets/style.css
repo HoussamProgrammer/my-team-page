@@ -10,38 +10,138 @@
 	padding: 0;
 }
 
-html,
-body {
-	font-family: 'Poppins', Arial, Helvetica, sans-serif;
-	padding: .3rem;
-	max-width: 1024px;
-}
-
 * {
 	font-family: inherit;
 }
 
-img {
-	max-width: 100%;
+body {
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 27px;
+	max-width: 974px;
+	padding: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fafafa;
 }
 
 h1 {
-	font-family: 'PT Serif', Arial, Helvetica, sans-serif;
-	font-size: 36px;
-	line-height: 47.7px;
+	font-family: 'PT Serif', serif;
+	font-size: 2.2rem;
+	font-weight: bold;
 }
 
-.presentation h2 {
+h2,
+h3 {
 	font-weight: 600;
-	text-transform: lowercase;
 }
 
-.presentation h2::first-letter {
-	text-transform: uppercase;
+header {
+	padding: 3em 0em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 2em;
 }
 
-.presentation p {
+header>* {
+	flex: 1 1 50%;
+}
+
+ul {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 2em;
+}
+
+@media screen and (min-width: 364px) {
+	ul {
+		gap: 1em;
+	}
+
+	li:nth-child(2n) {
+		margin-top: 3em;
+	}
+}
+
+@media screen and (min-width: 512px) {
+	ul {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 3em;
+	}
+}
+
+@media screen and (min-width: 728px) {
+
+
+	li:nth-child(2n) {
+		border: none;
+		margin-top: 0em;
+	}
+
+	li:nth-child(2),
+	li:nth-child(5) {
+		margin-top: 3em;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	header {
+		flex-direction: row;
+	}
+}
+
+.small-container {
+
+	display: flex;
+}
+
+.container-aspect-ratio {
+	flex: 1;
+	position: relative;
+	height: 0;
+
+	padding-bottom: 133%;
+}
+
+.container-aspect-ratio img {
+	position: absolute;
+	top: 0em;
+	right: 0em;
+	bottom: 0em;
+	left: 0em;
+
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.intro {
+	position: relative;
+	min-width: 2em;
+}
+
+.intro p {
+	transform-origin: 1em 1em;
+	transform: rotate(90deg);
+	position: absolute;
+	top: 0em;
+	left: 0em;
+	font-size: 18px;
+	width: max-content;
+}
+
+footer {
+	text-align: center;
+	padding: 1em;
+	color: rgb(116, 116, 116);
+}
+
+footer p {
 	font-weight: 400;
-	font-size: 14px;
-	line-height: 21px;
+}
+
+footer span {
+	font-weight: 700;
 }
